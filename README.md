@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# React Challenges
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small app where users can create personal challenges and track their progress — marking each challenge as **accomplished or **failed**.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create new challenges with a title and optional description
+- Mark a challenge as **Accomplished** or **Failed**
+- View lists of active, accomplished, and failed challenges
+- Simple, responsive UI built with React
 
-## React Compiler
+## 🧰 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (v19)
+- Vite (or your preferred React build tool)
+- Local state (or a lightweight store like Zustand / Context API)
+- CSS Modules / Tailwind (optional)
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/plinadev/react-challenges.git
+cd react-challenges
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open your browser at `http://localhost:5173` (or the port shown by your tooling).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📝 Usage
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Open the app.
+2. Create a challenge (give it a title, optional description).
+3. From the challenge list:
+   - Click **Accomplished** to mark it as completed.
+   - Click **Failed** to mark it as failed.
+   - Edit or delete a challenge as needed.
+4. Filter or view lists by status (Active / Accomplished / Failed).
+
+## 📁 Project Structure (example)
+
 ```
+react-challenges/
+├── src/
+│   ├── components/     # ChallengeList, ChallengeItem, NewChallengeForm
+│   ├── pages/          # Main app pages / routes
+│   ├── store/          # Optional: state management
+│   ├── styles/         # CSS or Tailwind config
+│   └── main.jsx
+├── index.html
+└── package.json
+```
+
+## 🛠 Scripts
+
+- `npm run dev` — start dev server
+- `npm run build` — build for production
+- `npm run preview` — preview production build
+
